@@ -13,6 +13,7 @@ hostname = api.suishenglu.cn
 
 let obj = JSON.parse($response.body);
 obj['Data']['VIP'] = 1;
-obj['Data']['Days'] = 1;
+obj['Data']['Days'] = 1825;
 obj['Data']['NoAds'] = 1;
+obj['Data']['CurrencyAmount'] = 9999;
 $done({body: JSON.stringify(obj)});
