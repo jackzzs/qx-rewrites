@@ -18,4 +18,5 @@ obj['Days'] = 365;
 obj['CurrencyAmount'] = 5000;
 obj['NoAds'] = 1;
 body = JSON.stringify(obj);
+console.log(body);
 $done(body);
