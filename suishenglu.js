@@ -3,7 +3,7 @@
 ***************************************
 [rewrite_local]
 
-^https?:\/\/api\.suishenglu\.cn\/account\/(getaccount|GetFileList|getUserBalance) url script-response-body https://raw.githubusercontent.com/jackzzs/qx-rewrites/main/suishenglu.js
+^https?:\/\/api\.suishenglu\.cn\/account\/(getaccount|GetFileList|getUserBalance) url script-response-body https://raw.githubusercontent.com/jackzzs/rewrites/main/suishenglu.js
 
 [mitm]
 
