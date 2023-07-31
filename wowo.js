@@ -5,12 +5,24 @@
 
 ^https?:\/\/circlef\.wewave\.com\.cn\/circlef\/api\/feed\/getUserActivityProfile url script-response-body https://raw.githubusercontent.com/jackzzs/rewrites/main/wowo.js
 
+^https?:\/\/circlef\.wewave\.com\.cn\/circlef\/api\/login\/getAppConfig url script-response-body https://raw.githubusercontent.com/jackzzs/rewrites/main/wowo.js
+
+^https?:\/\/circlef-report\.cn-shenzhen\.log\.aliyuncs\.com\/.* url reject
+
 [mitm]
 hostname = circlef.wewave.com.cn
 
 ***************************************/
 
 let obj = JSON.parse($response.body);
+
+if (obj['data'].hasOwnProperty('suggestPositiveComment')) {
+  obj['data']['suggestPositiveComment'] = true;
+}
+
+if (obj['data'].hasOwnProperty('adList')) {
+  obj['data']['adList'] = [];
+}
 
 if (obj['data'].hasOwnProperty('userInfo')) {
   obj['data']['userInfo']['vipStatus'] = 2;
